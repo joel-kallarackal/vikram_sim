@@ -5,13 +5,13 @@
       <geometry>
         <mesh filename="package://vikram_sim/meshes/igvc/vikram_model.dae"/>
       </geometry>
-      <origin rpy="0 0.111013 0" xyz="0.076544 -0.6 0.050406"/>
+      <origin rpy="0 0 3.14" xyz="-0.1 0.6 0.047452"/>
     </visual>
     <collision>
      <geometry>
         <mesh filename="package://vikram_sim/meshes/igvc/vikram_model.dae"/>
       </geometry>
-      <origin rpy="0 0.111013 0" xyz="0.076544 -0.6 0.050406"/>
+      <origin rpy="0 0 3.14" xyz="-0.1 0.6 0.047452"/>
     </collision>
     <inertial>
       <mass value="10"/>
@@ -172,14 +172,14 @@
  <joint name="body_to_wheel1" type="continuous">
     <parent link="base_link"/>
     <child link="wheel1"/>
-	<axis xyz="-1 0 0"/>
+	<axis xyz="1 0 0"/>
     <origin rpy ="0 0 1.5707" xyz="-0.019369 -0.35 0"/>
   </joint>
  <joint name="body_to_wheel2" type="continuous">
     <parent link="base_link"/>
     <child link="wheel2"/>
-    <axis xyz="1 0 0"/>
-    <origin rpy ="0 0 -1.5707" xyz="-0.019369 0.32336 0"/>
+    <axis xyz="-1 0 0"/>
+    <origin rpy ="0 0 -1.5707" xyz="-0.019369 0.4 0"/>
   </joint>
 
 
@@ -187,7 +187,7 @@
     <parent link="base_link"/>
     <child link="castor_cylinder"/>
     <axis xyz="0 0 1"/>
-    <origin rpy ="0 0.112383 0" xyz="0.62 -0.008 -0.15"/>
+    <origin rpy ="0 -0.012285 0" xyz="-0.609078 -0.008 -0.1"/>
   </joint>
  <joint name="cylinder_to_castor_ball" type="continuous">
     <parent link="castor_cylinder"/>
@@ -198,7 +198,7 @@
   <joint name="camera_to_body" type="fixed">
   <parent link="base_link"/>
   <child link="zed_camera"/>
-  <origin rpy ="0 0 3.14" xyz="0.20 -0.015 0.705"/>
+  <origin rpy ="0 0 0" xyz="-0.15 0.025 0.705"/>
   </joint>
 
   <gazebo>
@@ -208,13 +208,13 @@
     <updateRate>100</updateRate>
 
     <!-- Name of left joint, defaults to `left_joint` -->
-    <leftJoint>body_to_wheel1</leftJoint>
+    <leftJoint>body_to_wheel2</leftJoint>
 
     <!-- Name of right joint, defaults to `right_joint` -->
-    <rightJoint>body_to_wheel2</rightJoint>
+    <rightJoint>body_to_wheel1</rightJoint>
 
     <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
-    <wheelSeparation>0.64672</wheelSeparation>
+    <wheelSeparation>0.67336</wheelSeparation>
 
     <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
     <wheelDiameter>0.4</wheelDiameter>

@@ -3,7 +3,7 @@
   <model name='ramp'>
     <link name='link_2'>
       <inertial>
-        <mass>0.00153106</mass>
+        <mass>10000</mass>
         <inertia>
           <ixx>0.00012759</ixx>
           <ixy>0</ixy>
@@ -101,7 +101,7 @@
     </link>
     <link name='link_2_clone'>
       <inertial>
-        <mass>0.0011788</mass>
+        <mass>100000</mass>
         <inertia>
           <ixx>9.82334e-05</ixx>
           <ixy>0</ixy>
@@ -199,7 +199,7 @@
     </link>
     <link name='link_3'>
       <inertial>
-        <mass>1.13204</mass>
+        <mass>100000</mass>
         <inertia>
           <ixx>0.215233</ixx>
           <ixy>0</ixy>
