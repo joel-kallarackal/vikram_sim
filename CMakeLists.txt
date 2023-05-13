@@ -8,16 +8,12 @@ project(vikram_sim)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  gazebo_ros
+  geometry_msgs
   roscpp
   rospy
   std_msgs
+  turtlesim
 )
-
-find_package(gazebo REQUIRED)
-
-find_package(OpenCV)
-target_link_libraries(vikram_sim ${OpenCV_LIBRARIES})
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -76,7 +72,7 @@ target_link_libraries(vikram_sim ${OpenCV_LIBRARIES})
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   std_msgs
+#   geometry_msgs#   std_msgs
 # )
 
 ################################################
@@ -109,11 +105,10 @@ target_link_libraries(vikram_sim ${OpenCV_LIBRARIES})
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-    DEPENDS
-      gazebo_ros
-    CATKIN_DEPENDS
-    INCLUDE_DIRS
-    LIBRARIES
+#  INCLUDE_DIRS include
+#  LIBRARIES vikram_sim
+#  CATKIN_DEPENDS geometry_msgs roscpp rospy std_msgs turtlesim
+#  DEPENDS system_lib
 )
 
 ###########
@@ -122,7 +117,10 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS} )
+include_directories(
+# include
+  ${catkin_INCLUDE_DIRS}
+)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -137,7 +135,7 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFo
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/vikram_sim_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/vikram_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -201,7 +199,7 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFo
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_vikram_sim.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_vikram.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
