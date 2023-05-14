@@ -5,7 +5,7 @@
     <node pkg="vikram_sim" type="teleop_key.py" name="vikram_teleop_key" output="screen"/>
     
     <!-- Spawn Vikram to gazebo world -->
-    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find vikram_sim)/urdf/vikram_igvc.urdf -urdf -z 0 -model vikram" />
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find vikram_sim)/urdf/vikram_igvc.urdf -urdf -z 0 -model vikram " />
 
     <!-- Load urdf into parameter server -->
     <param name="robot_description" textfile="$(find vikram_sim)/urdf/vikram_igvc.urdf"/>
