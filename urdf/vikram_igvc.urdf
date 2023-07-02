@@ -27,7 +27,7 @@
         </geometry>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 -0" xyz="0 0 0"/>
         <geometry>
           <box size="0.0001 0.00001 0.00001"/>
         </geometry>
@@ -222,7 +222,7 @@
   <joint name="perp" type="fixed">
   <parent link="base_link"/>
   <child link="perpendicular"/>
-  <origin rpy ="-1.5707 0 0" xyz="0.15 0 1.58"/>
+  <origin rpy ="-1.5707 0 -1.5707" xyz="0.15 0 1.58"/>
   </joint>
 
   <gazebo>
@@ -250,7 +250,7 @@
     <wheelTorque>100</wheelTorque>
 
     <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
-    <commandTopic>vikram/cmd_vel</commandTopic>
+    <commandTopic>/cmd_vel</commandTopic>
 
     <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
     <odometryTopic>odom</odometryTopic>
@@ -265,7 +265,7 @@
     <odometrySource>1</odometrySource>
 
     <!-- Set to true to publish transforms for the wheel links, defaults to false -->
-    <publishWheelTF>true</publishWheelTF>
+    <publishWheelTF>false</publishWheelTF>
 
     <!-- Set to true to publish transforms for the odometry, defaults to true -->
     <publishOdom>true</publishOdom>

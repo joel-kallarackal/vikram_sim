@@ -10,6 +10,11 @@
     <!-- Load urdf into parameter server -->
     <param name="robot_description" textfile="$(find vikram_sim)/urdf/vikram_igvc.urdf"/>
 
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="map_tf_broadcaster" args="1 0 0 0 0 0 1 map odom" /> -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_footprint_tf_broadcaster" args="0 0 0 0 0 0 1 base_footprint base_link" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="castor_cylinder_tf_broadcaster" args="-0.609078 -0.008 -0.1 0 0 0 1 base_link castor_cylinder" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="castor_ball_tf_broadcaster" args="0 -0 -0.065 0 0 0 1 castor_cylinder castor_ball" />
+
     <!-- Robot State Publisher -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
       <remap from="robot_description" to="robot_description" />
